@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 217.2 32.6% 17.5%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 200 100% 70%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 120 100% 60%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 217 91% 60%;
+
+    /* Custom ShareCare tokens */
+    --hero-gradient: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
+    --card-shadow: 0 8px 32px -8px hsl(217 91% 60% / 0.3);
+    --button-gradient: linear-gradient(135deg, hsl(217 91% 60%), hsl(200 100% 70%));
+    --stats-gradient: linear-gradient(180deg, hsl(217.2 32.6% 17.5%), hsl(222.2 84% 4.9%));
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --glow-primary: 0 0 15px hsl(217 91% 60% / 0.2);
+    --glow-accent: 0 0 12px hsl(200 100% 70% / 0.15);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 200 100% 70%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 120 100% 60%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 217 91% 60%;
+
+    /* Light mode custom tokens */
+    --hero-gradient: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
+    --card-shadow: 0 4px 20px -2px hsl(217 91% 60% / 0.1);
+    --button-gradient: linear-gradient(135deg, hsl(217 91% 60%), hsl(200 100% 70%));
+    --stats-gradient: linear-gradient(180deg, hsl(210 100% 4%), hsl(222.2 84% 4.9%));
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.logo{
+  cursor: pointer;
+}
+.navbar{
+  background-color: transparent !important;
+  box-shadow: 0px 0.25px 4px rgb(2, 1, 11) !important;
+  height: 70px !important;
+}
+#bubble{
+  margin: 7rem !important;
+}
+#heading{
+  margin-bottom: 2rem !important;
+}
+.boxess{
+  cursor: grabbing !important;
+  margin: 0.5rem !important;
+}
+.subhead{
+  font-size:  2.5rem !important;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem !important;
+}
+#abtbtn{
+  margin: 4rem;
+  width: 12rem;
+  height: 3rem;
+  padding: 2rem;
+  margin-left: 36rem;
+}
+.footer{
+  height: 29rem !important;
+  background-color: rgba(10, 2, 38, 0.628) !important;
+  box-shadow: 14px 0px 4px rgb(178, 177, 186) !important;
+}
+.rightForm{
+  margin-top: 94px !important;
+  margin-right: 7rem !important;
+  height: 80% !important;
+  width: 90% !important;
+  border-radius: 3rem !important;
+  overflow: hidden !important;
+  margin-left: -3rem !important;
+  margin-bottom: 3rem !important;
+}
+.signHead{
+  margin-top: -2.5rem !important;
+}
+.loginForm{
+  margin-top: 7rem !important;
+  border-radius: 3rem !important;
+  overflow: hidden !important;
+  height: 80% !important;
+}
+#resource{
+  margin-top: 94px !important;
+}
+.cards{
+  border-radius: 1rem !important;
+}
+#resCard{
+  margin-bottom: 1rem !important;
+}
+.viewRes{
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+  width: 16rem !important;
+  height: 4rem !important;
+  border-radius: 2rem !important;
+  background-color: #0533b0 ;
+  font-weight: bold;
+}
+#resHeadAvailable{
+  font-size: 2.5rem !important;
+  font-weight: bold !important;
+}
+.filters{
+  border-radius: 1.5rem !important;
+  font-weight: bold !important;
+  width: 7rem !important;
+  height: 4rem !important;
+}
+#clear{
+  margin-left: 4rem !important;
+}
