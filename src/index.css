@@ -182,7 +182,7 @@ All colors MUST be HSL.
   border-radius: 1rem !important;
 }
 #resCard{
-  margin-bottom: 1rem !important;
+  margin-bottom: 2rem !important;
 }
 .viewRes{
   margin-top: 2rem !important;
@@ -205,4 +205,33 @@ All colors MUST be HSL.
 }
 #clear{
   margin-left: 4rem !important;
+}
+#contactbtn{
+  margin-top: 1rem !important;
+  margin-left: -0.02rem !important;
+  width: 30rem !important;
+  height: 4rem !important;
+  border-radius: 2rem !important;
+  font-weight: bold;
+  font-size: medium;
+   box-shadow: inset 2px 2px 10px 3px rgb(0, 0, 0);
+}
+#actionsopt{
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent !important ;
+  color: white;
+}
+.outteraction{
+  width: 50%;
+  border-radius: 2rem;
+  box-shadow: 0.5px 0px 5px 0.25px rgb(2, 103, 137);
+
+}
+.username{
+  font-size: smaller;
 }
