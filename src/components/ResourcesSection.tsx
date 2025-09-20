@@ -27,7 +27,7 @@ const ResourcesSection = () => {
         
         <div className="text-center">
           <Button variant="outline" size="lg" asChild className="viewRes">
-            <Link to="/resources">
+            <Link to="/signup">
               View All Resources
             </Link>
           </Button>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   ArrowLeft,
   Heart,
@@ -22,8 +23,47 @@ import { suggestedUsers } from "../data/data";
 import { trendingTopics } from "../data/data";
 
 const Resources = () => {
-  const [resourcePostsData, setResourcePostsData] =
-    React.useState(resourcePosts);
+  const [resourcePostsData, setResourcePostsData] =React.useState(resourcePosts);
+
+  const handleNewDelhiFilter = () => {
+    const filteredPosts = resourcePosts.filter(
+      (post) => post.state.toLowerCase() === "new delhi"
+    );
+    setResourcePostsData(filteredPosts);
+  };
+  const handlePunjabFilter = () => {
+    const filteredPosts = resourcePosts.filter(
+      (post) => post.state.toLowerCase() === "punjab"
+    );
+    setResourcePostsData(filteredPosts);
+  };
+  const handleNoidaFilter = () => {
+    const filteredPosts = resourcePosts.filter(
+      (post) => post.state.toLowerCase() === "noida"
+    );
+    setResourcePostsData(filteredPosts);
+  };
+  const handleMumbaiFilter = () => {
+    const filteredPosts = resourcePosts.filter(
+      (post) => post.state.toLowerCase() === "mumbai"
+    );
+    setResourcePostsData(filteredPosts);
+  };
+  const handleBangaloreFilter = () => {
+    const filteredPosts = resourcePosts.filter(
+      (post) => post.state.toLowerCase() === "bangalore"
+    );
+    setResourcePostsData(filteredPosts);
+  };
+  const handlePuneFilter = () => {
+    const filteredPosts = resourcePosts.filter(
+      (post) => post.state.toLowerCase() === "pune"
+    );
+    setResourcePostsData(filteredPosts);
+  };
+
+
+
 
   const handleclothingFilter = () => {
     const filteredPosts = resourcePosts.filter(
@@ -87,82 +127,102 @@ const Resources = () => {
         <div className="flex gap-6">
           {/* Left Sidebar - Suggested Users */}
           <div className="hidden lg:block w-80 flex-shrink-0">
-            <Card className="p-6 ">
-              <h3 className="text-lg font-bold mb-4">Filter by choice</h3>
-              <div className="space-y-3">
-                {/* {suggestedUsers.map((user, index) => (
-                  <div key={index} className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <Avatar className="h-10 w-10 bg-primary">
-                        <AvatarImage src={user.avatar} />
-                        <AvatarFallback>{user.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                      </Avatar>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-1">
-                          <span className="font-semibold text-sm">{user.name}</span>
-                          
-                        </div>
-                        <div className="text-xs text-muted-foreground">
-                          {user.followers} followers • {user.donations} donations
-                        </div>
-                      </div>
-                    </div>
-                    <Button 
-                      size="sm" 
-                      variant={user.isFollowing ? "outline" : "default"}
-                      className="text-xs px-3"
+            <div className=" sticky top-20">
+              <Card className="p-5 mb-6">
+                <h3 className="text-lg font-bold mb-4">Filter by choice <i className="iconcard fa-solid fa-filter"></i></h3>
+                <div className="space-y-3">
+                  <div className="flex gap-3 flex-wrap">
+                    <Button
+                      onClick={handleclothingFilter}
+                      className="filters bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400"
                     >
-                      {user.isFollowing ? "Following" : "Follow"}
+                      <i className="fa-solid fa-shirt"></i>Clothing
+                    </Button>
+                    <Button
+                      onClick={handleeducationFilter}
+                      className="filters bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400"
+                    >
+                      <i className="fa-solid fa-book-open"></i>Education
+                    </Button>
+                    <Button
+                      onClick={handlefoodFilter}
+                      className="filters bg-orange-100 text-orange-800 dark:bg-orange-900/20 dark:text-orange-400"
+                    >
+                      <i className="fa-solid fa-utensils"></i>Food
+                    </Button>
+                    <Button
+                      onClick={handlehealthcareFilter}
+                      className="filters bg-purple-100 text-purple-800 dark:bg-purple-900/20 dark:text-purple-400"
+                    >
+                      <i className="fa-solid fa-heart-pulse"></i>Healthcare
+                    </Button>
+                    <Button
+                      onClick={handleFurnitureFilter}
+                      className="filters bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-400"
+                    >
+                      <i className="fa-solid fa-couch"></i>Furniture
+                    </Button>
+                    <Button
+                      onClick={handleOtherFilter}
+                      className="filters bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-400"
+                    >
+                      <i className="fa-solid fa-ellipsis"></i>Other
+                    </Button>
+                    <Button
+                      onClick={() => setResourcePostsData(resourcePosts)}
+                      id="clear"
+                      className="mx-10 filters bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-400"
+                    >
+                      <i className="fa-solid fa-broom"></i>Clear Filters
                     </Button>
                   </div>
-                ))} */}
-                <div className="flex gap-3 flex-wrap">
-                  <Button
-                    onClick={handleclothingFilter}
-                    className="filters bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400"
-                  >
-                    <i className="fa-solid fa-shirt"></i>Clothing
-                  </Button>
-                  <Button
-                    onClick={handleeducationFilter}
-                    className="filters bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400"
-                  >
-                    <i className="fa-solid fa-book-open"></i>Education
-                  </Button>
-                  <Button
-                    onClick={handlefoodFilter}
-                    className="filters bg-orange-100 text-orange-800 dark:bg-orange-900/20 dark:text-orange-400"
-                  >
-                    <i className="fa-solid fa-utensils"></i>Food
-                  </Button>
-                  <Button
-                    onClick={handlehealthcareFilter}
-                    className="filters bg-purple-100 text-purple-800 dark:bg-purple-900/20 dark:text-purple-400"
-                  >
-                    <i className="fa-solid fa-heart-pulse"></i>Healthcare
-                  </Button>
-                  <Button
-                    onClick={handleFurnitureFilter}
-                    className="filters bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-400"
-                  >
-                    <i className="fa-solid fa-couch"></i>Furniture
-                  </Button>
-                  <Button
-                    onClick={handleOtherFilter}
-                    className="filters bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-400"
-                  >
-                    <i className="fa-solid fa-ellipsis"></i>Other
-                  </Button>
-                  <Button
-                    onClick={() => setResourcePostsData(resourcePosts)}
-                    id="clear"
-                    className="mx-10 filters bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-400"
-                  >
-                    <i className="fa-solid fa-broom"></i>Clear Filters
-                  </Button>
                 </div>
-              </div>
-            </Card>
+              </Card>
+              <Card className="p-6">
+                <h3 className="text-lg font-bold mb-4">Filter by location <i className="iconcard fa-solid fa-location-dot color-primary"></i></h3>
+                <div className="space-y-3">
+                  <div className="flex gap-3 flex-wrap">
+                    <Button
+                      onClick={handleNewDelhiFilter}
+                      className="filters bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400"
+                    >
+                      New Delhi
+                    </Button>
+                    <Button
+                      onClick={handlePunjabFilter}
+                      className="filters bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400"
+                    >
+                      Punjab
+                    </Button>
+                    <Button
+                      onClick={handleNoidaFilter}
+                      className="filters bg-orange-100 text-orange-800 dark:bg-orange-900/20 dark:text-orange-400"
+                    >
+                      Noida
+                    </Button>
+                    <Button
+                      onClick={handleMumbaiFilter}
+                      className="filters bg-purple-100 text-purple-800 dark:bg-purple-900/20 dark:text-purple-400"
+                    >
+                      Mumbai
+                    </Button>
+                    <Button
+                      onClick={handleBangaloreFilter}
+                      className="filters bg-purple-100 text-purple-800 dark:bg-purple-900/20 dark:text-purple-400"
+                    >
+                      Bangalore 
+                    </Button>
+                    <Button
+                      onClick={() => setResourcePostsData(resourcePosts)}
+                      
+                      className="filters bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-400"
+                    >
+                      <i className="fa-solid fa-broom"></i>Clear Filters
+                    </Button>
+                  </div>
+                </div>
+              </Card>
+            </div>
           </div>
 
           {/* Center Content */}
@@ -285,27 +345,37 @@ const Resources = () => {
 
           {/* Right Sidebar - Trending Topics */}
           <div className="hidden lg:block w-80 flex-shrink-0 ">
-            <Card className="p-6">
-              <h3 className="text-lg font-bold mb-4 flex items-center gap-2 ">
-                <TrendingUp className="h-5 w-5" />
-                Trending Topics
-              </h3>
-              <div className="space-y-3">
-                {trendingTopics.map((topic, index) => (
-                  <div
-                    key={index}
-                    className="hover:bg-muted/50 p-2 rounded-lg transition-colors"
-                  >
-                    <div className="font-semibold text-primary">
-                      {topic.topic}
+            <div className=" sticky top-20">
+              <Button
+                variant="outline"
+                size="lg"
+                asChild
+                className="viewRes postres"
+              >
+                <Link to="/signup">Post New Resource</Link>
+              </Button>
+              <Card className="p-6 sticky top-20">
+                <h3 className="text-lg font-bold mb-4 flex items-center gap-2 ">
+                  <TrendingUp className="h-5 w-5" />
+                  Trending Topics
+                </h3>
+                <div className="space-y-3">
+                  {trendingTopics.map((topic, index) => (
+                    <div
+                      key={index}
+                      className="hover:bg-muted/50 p-2 rounded-lg transition-colors"
+                    >
+                      <div className="font-semibold text-primary">
+                        {topic.topic}
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        {topic.posts}
+                      </div>
                     </div>
-                    <div className="text-sm text-muted-foreground">
-                      {topic.posts}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Card>
+                  ))}
+                </div>
+              </Card>
+            </div>
           </div>
         </div>
       </div>
