@@ -352,7 +352,7 @@ const Resources = () => {
                 asChild
                 className="viewRes postres"
               >
-                <Link to="/signup">Post New Resource</Link>
+                <Link to="/post">Post New Resource</Link>
               </Button>
               <Card className="p-6 sticky top-20">
                 <h3 className="text-lg font-bold mb-4 flex items-center gap-2 ">
